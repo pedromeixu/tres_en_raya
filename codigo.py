@@ -32,3 +32,4 @@ def ganador (contador1 = 0, contador2 = 0) :
 while (contador1 < 3 or contador2 < 3) :
     elegir_opcion ()
     opcion_ordenador ()
+print("cambio de prueba")
