@@ -6,10 +6,10 @@ def elegir_opcion() :
     return opcion
 
 def opcion_ordenador () :
-    opcion_pc = random.randrange(1,3)
+    opcion_pc = random.randrange(1,4)
     return opcion_pc
 
-def ganador (contador1 = 0, contador2 = 0) :
+def ganador () :
     if (elegir_opcion () == "Piedra" and opcion_ordenador () == 1) :
         return "empate"
     elif (elegir_opcion () == "Piedra" and opcion_ordenador () == 2) :
@@ -29,7 +29,20 @@ def ganador (contador1 = 0, contador2 = 0) :
     elif (elegir_opcion () == "Tijera" and opcion_ordenador () == 3) :
         return "empate"
 
+contador1 = 0
+contador2 = 0
+
+opcion_ordenador ()
+
 while (contador1 < 3 or contador2 < 3) :
-    elegir_opcion ()
+    print (elegir_opcion ())
     opcion_ordenador ()
-print("cambio de prueba")
+    print (ganador ())
+    if ganador () == "perdiste" :
+        print("perdiste la ronda")
+        contador2 = contador2 + 1
+    elif ganador () == "ganaste" :
+        print("ganaste la ronda")
+        contador1 == contador1 + 1
+    else :
+        print("empatasteis la ronda")
