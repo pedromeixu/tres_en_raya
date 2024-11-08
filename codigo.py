@@ -40,3 +40,17 @@ while (contador1 < 3 or contador2 < 3) :
 
     resultado = ganador(jugador, ordenador)
     print("resultado")
+
+    if resultado == "perdiste" :
+        print ("perdiste la ronda")
+        contador2 = contador2 + 1
+    elif resultado == "ganaste" :
+        print("ganaste la ronda") 
+        contador1 = contador1 + 1
+    else: 
+        print("empataste la ronda")
+
+if contador1 == 3:
+    print("GANASTE!!!!!")
+else:
+    print("PERDISTE!!!!")
