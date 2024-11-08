@@ -10,23 +10,23 @@ def opcion_ordenador () :
     return opcion_pc
 
 def ganador (jugador, ordenador) :
-    if (jugador () == "Piedra" and ordenador () == 1) :
+    if (jugador == "Piedra" and ordenador == 1) :
         return "empate"
-    elif (jugador () == "Piedra" and ordenador() == 2) :
+    elif (jugador == "Piedra" and ordenador == 2) :
         return "perdiste"
-    elif (jugador () == "Piedra" and ordenador () == 3) :
+    elif (jugador == "Piedra" and ordenador == 3) :
         return "ganaste"
-    elif (jugador () == "Papel" and ordenador () == 1) :
+    elif (jugador == "Papel" and ordenador == 1) :
         return "ganaste"
-    elif (jugador () == "Papel" and ordenador () == 2) :
+    elif (jugador == "Papel" and ordenador == 2) :
         return "empate"
-    elif (jugador () == "Papel" and ordenador () == 3) :
+    elif (jugador == "Papel" and ordenador == 3) :
         return "perdiste"
-    elif (jugador () == "Tijera" and ordenador () == 1) :
+    elif (jugador == "Tijera" and ordenador == 1) :
         return "perdiste"
-    elif (jugador () == "Tijera" and ordenador () == 2) :
+    elif (jugador == "Tijera" and ordenador == 2) :
         return "ganaste"
-    elif (jugador () == "Tijera" and ordenador () == 3) :
+    elif (jugador == "Tijera" and ordenador == 3) :
         return "empate"
 
 contador1 = 0
