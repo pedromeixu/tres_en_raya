@@ -2,7 +2,7 @@ import random
 
 def elegir_opcion() :
     print("elige una opcion\n", "Piedra\n", "Papel\n", "Tijera")
-    opcion = input("escoge una opcion")
+    opcion = input("")
     return opcion
 
 def opcion_ordenador () :
@@ -32,7 +32,7 @@ def ganador (jugador, ordenador) :
 contador1 = 0
 contador2 = 0
 
-while (contador1 < 3 or contador2 < 3) :
+while (contador1 < 3 and contador2 < 3) :
     jugador = elegir_opcion ()
     ordenador = opcion_ordenador ()
 
@@ -44,11 +44,14 @@ while (contador1 < 3 or contador2 < 3) :
     if resultado == "perdiste" :
         print ("perdiste la ronda")
         contador2 = contador2 + 1
+        print ("tu vas:", contador1, "\nel ordenador va:", contador2)
     elif resultado == "ganaste" :
         print("ganaste la ronda") 
         contador1 = contador1 + 1
+        print ("tu vas:", contador1, "\nel ordenador va:", contador2)
     else: 
         print("empataste la ronda")
+        print ("tu vas:", contador1, "\nel ordenador va:", contador2)
 
 if contador1 == 3:
     print("GANASTE!!!!!")
