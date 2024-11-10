@@ -41,13 +41,16 @@ def ganador (jugador, ordenador) :
 
 contador1 = 0
 contador2 = 0
+opcion = "si"
 
-while (contador1 < 3 and contador2 < 3) :
+while opcion == "si" : 
+
     jugador = elegir_opcion ()
     ordenador = opcion_ordenador ()
 
     if contador1 == 2 :
         ordenador = ordenador_tramposo (jugador, ordenador)
+
     print ("tu eleccion ha sido", jugador, ", la del ordenador fue", ordenador)
 
     resultado = ganador(jugador, ordenador)
@@ -69,7 +72,14 @@ while (contador1 < 3 and contador2 < 3) :
         print ("tu vas:", contador1, "\nel ordenador va:", contador2)
         print()
 
-if contador1 == 3:
-    print("GANASTE!!!!!")
-else:
-    print("PERDISTE!!!!")
+    if contador1 == 3 or contador2 == 3 :
+        if contador1 == 3:
+            print("GANASTE!!!!!")
+        elif contador2 == 3:
+            print("PERDISTE!!!!")
+        opcion = input("quieres jugar otra ronda? (si/no)")
+        if opcion == "si" :
+            contador1 = 0
+            contador2 = 0
+            continue
+        break
