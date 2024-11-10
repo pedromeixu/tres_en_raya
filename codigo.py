@@ -11,12 +11,11 @@ def opcion_ordenador () :
 
 def ordenador_tramposo (jugador, opcion_pc) :
     if jugador == "Piedra" :
-        opcion_pc == 2
+        opcion_pc = 2
     elif jugador == "Papel" :
-        opcion_pc == 3
+        opcion_pc = 3
     else :
-        opcion_pc == 1
-    print ("tramposo")
+        opcion_pc = 1
     return opcion_pc
  
 
@@ -48,8 +47,7 @@ while (contador1 < 3 and contador2 < 3) :
     ordenador = opcion_ordenador ()
 
     if contador1 == 2 :
-        ordenador_tramposo (jugador, ordenador)
-    
+        ordenador = ordenador_tramposo (jugador, ordenador)
     print ("tu eleccion ha sido", jugador, ", la del ordenador fue", ordenador)
 
     resultado = ganador(jugador, ordenador)
