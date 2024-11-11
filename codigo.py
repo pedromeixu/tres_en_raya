@@ -1,42 +1,59 @@
 import random
 
-def elegir_opcion() :
+def elegir_opcion() -> str:
+    '''
+    esta funcion sirve para sacar la decision del jugador 
+    '''
     print("elige una opcion\n", "Piedra\n", "Papel\n", "Tijera")
     opcion = input("")
     return opcion
 
-def opcion_ordenador () :
+def opcion_ordenador () -> str:
+    '''
+    esta funcion sirve para sacar la opcion aleatoria del ordenador
+    '''
     opcion_pc = random.randrange(1,4)
-    return opcion_pc
-
-def ordenador_tramposo (jugador, opcion_pc) :
-    if jugador == "Piedra" :
-        opcion_pc = 2
-    elif jugador == "Papel" :
-        opcion_pc = 3
+    if opcion_pc == 1 :
+        opcion_pc = "Piedra"
+    elif opcion_pc == 2 :
+        opcion_pc = "Papel"
     else :
-        opcion_pc = 1
+        opcion_pc = "Tijera"
     return opcion_pc
- 
 
-def ganador (jugador, ordenador) :
-    if (jugador == "Piedra" and ordenador == 1) :
+def ordenador_tramposo (jugador: str, opcion_pc: str) -> str:
+    '''
+    esta funcion sirve para que el ordenador siempre saque la opcion ganadora contra el jugador
+    '''
+    if jugador == "Piedra" :
+        opcion_pc = "Papel"
+    elif jugador == "Papel" :
+        opcion_pc = "Tijera"
+    else :
+        opcion_pc = "Piedra"
+    return opcion_pc
+
+def ganador (jugador: str, ordenador: str) -> str:
+    '''
+    esta funcion sirve para decidir el ganador teniendo en cuenta las opciones de cada uno
+    '''
+    if (jugador == "Piedra" and ordenador == "Piedra") :
         return "empate"
-    elif (jugador == "Piedra" and ordenador == 2) :
+    elif (jugador == "Piedra" and ordenador == "Papel") :
         return "perdiste"
-    elif (jugador == "Piedra" and ordenador == 3) :
+    elif (jugador == "Piedra" and ordenador == "Tijera") :
         return "ganaste"
-    elif (jugador == "Papel" and ordenador == 1) :
+    elif (jugador == "Papel" and ordenador == "Piedra") :
         return "ganaste"
-    elif (jugador == "Papel" and ordenador == 2) :
+    elif (jugador == "Papel" and ordenador == "Papel") :
         return "empate"
-    elif (jugador == "Papel" and ordenador == 3) :
+    elif (jugador == "Papel" and ordenador == "Tijera") :
         return "perdiste"
-    elif (jugador == "Tijera" and ordenador == 1) :
+    elif (jugador == "Tijera" and ordenador == "Piedra") :
         return "perdiste"
-    elif (jugador == "Tijera" and ordenador == 2) :
+    elif (jugador == "Tijera" and ordenador == "Papel") :
         return "ganaste"
-    elif (jugador == "Tijera" and ordenador == 3) :
+    else :
         return "empate"
 
 contador1 = 0
